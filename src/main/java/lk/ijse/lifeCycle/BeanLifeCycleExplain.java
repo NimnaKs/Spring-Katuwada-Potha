@@ -1,12 +1,13 @@
 package lk.ijse.lifeCycle;
 
-import jakarta.annotation.PostConstruct;
 import lk.ijse.di.GoodFood;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+
+import javax.annotation.PostConstruct;
 
 public class BeanLifeCycleExplain implements BeanNameAware,
         BeanFactoryAware,
