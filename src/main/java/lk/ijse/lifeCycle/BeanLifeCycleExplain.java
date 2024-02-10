@@ -1,7 +1,9 @@
 package lk.ijse.lifeCycle;
 
+import lk.ijse.di.GoodFood;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
@@ -11,7 +13,13 @@ public class BeanLifeCycleExplain implements BeanNameAware,
         InitializingBean,
         DisposableBean {
 
+    @Autowired
+    GoodFood goodFood;
 
+    public BeanLifeCycleExplain(){
+//        goodFood.eat();
+//        Cannot access value set with DI
+    }
     public void myMethod01(){
         System.out.println("My Method 01");
     }
@@ -37,10 +45,12 @@ public class BeanLifeCycleExplain implements BeanNameAware,
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("After Properties set");
+        goodFood.eat();
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("Application Context : "+applicationContext);
     }
+
 }
