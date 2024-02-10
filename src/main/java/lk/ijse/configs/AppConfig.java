@@ -27,8 +27,8 @@ public class AppConfig {
         return new BeanLifeCycleExplain();
     }
 
-    /*@Bean
+    @Bean
     public ThreadPoolTaskScheduler threadPoolTaskScheduler(){
         return new ThreadPoolTaskScheduler();
-    }*/
+    }
 }

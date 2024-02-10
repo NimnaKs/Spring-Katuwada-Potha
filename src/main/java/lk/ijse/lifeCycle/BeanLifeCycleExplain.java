@@ -1,5 +1,6 @@
 package lk.ijse.lifeCycle;
 
+import jakarta.annotation.PostConstruct;
 import lk.ijse.di.GoodFood;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
@@ -19,6 +20,12 @@ public class BeanLifeCycleExplain implements BeanNameAware,
     public BeanLifeCycleExplain(){
 //        goodFood.eat();
 //        Cannot access value set with DI
+    }
+
+    @PostConstruct
+    private void Init() {
+        System.out.println("Init");
+        goodFood.eat();
     }
     public void myMethod01(){
         System.out.println("My Method 01");
