@@ -15,7 +15,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 @ComponentScan(basePackages = "lk.ijse")
 @EnableScheduling
 public class AppConfig {
-    @Bean("test")
+  /*  @Bean("test")
     @Scope(ConfigurableListableBeanFactory.SCOPE_PROTOTYPE)
 //    Full mode - Inter bean dependency
     public MyBean bean(){
@@ -30,5 +30,5 @@ public class AppConfig {
     @Bean
     public ThreadPoolTaskScheduler threadPoolTaskScheduler(){
         return new ThreadPoolTaskScheduler();
-    }
+    }*/
 }
