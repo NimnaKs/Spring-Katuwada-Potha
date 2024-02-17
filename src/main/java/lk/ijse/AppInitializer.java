@@ -1,9 +1,8 @@
 package lk.ijse;
 
 import lk.ijse.configs.AppConfig;
-import lk.ijse.data.DataProcess;
 import lk.ijse.inject.Car;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import lk.ijse.inject.Lorry;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AppInitializer {
@@ -24,7 +23,9 @@ public class AppInitializer {
         bean.dataProcessEnd();*/
 
         var car = ctx.getBean(Car.class);
-        System.out.println(car.run());
+        System.out.println(car.start());
+        var lorry = ctx.getBean(Lorry.class);
+        System.out.println(lorry.start());
 
        /* var myComponent =
                 ctx.getBean("myComponent");

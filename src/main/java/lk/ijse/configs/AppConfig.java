@@ -3,6 +3,7 @@ package lk.ijse.configs;
 import lk.ijse.bean.MyBean;
 import lk.ijse.inject.Car;
 import lk.ijse.inject.Engine;
+import lk.ijse.inject.Lorry;
 import lk.ijse.lifeCycle.BeanLifeCycleExplain;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +15,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 @Configuration
-@ComponentScan(basePackageClasses = {Car.class, Engine.class})
+@ComponentScan(basePackageClasses = {Car.class, Engine.class, Lorry.class})
 @EnableScheduling
 public class AppConfig {
   /*  @Bean("test")
