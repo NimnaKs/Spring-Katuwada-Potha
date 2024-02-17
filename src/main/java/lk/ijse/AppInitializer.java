@@ -2,6 +2,7 @@ package lk.ijse;
 
 import lk.ijse.configs.AppConfig;
 import lk.ijse.data.DataProcess;
+import lk.ijse.inject.Car;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -18,9 +19,12 @@ public class AppInitializer {
         //Refresh the context
         ctx.refresh();
 
-        DataProcess bean = ctx.getBean(DataProcess.class);
+        /*DataProcess bean = ctx.getBean(DataProcess.class);
         bean.dataProcessStarted();
-        bean.dataProcessEnd();
+        bean.dataProcessEnd();*/
+
+        var car = ctx.getBean(Car.class);
+        System.out.println(car.run());
 
        /* var myComponent =
                 ctx.getBean("myComponent");
